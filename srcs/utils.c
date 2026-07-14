@@ -6,9 +6,42 @@
 /*   By: esttina <esttina@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/13 06:42:15 by esttina           #+#    #+#             */
-/*   Updated: 2026/07/13 07:55:36 by esttina          ###   ########.fr       */
+/*   Updated: 2026/07/14 09:09:34 by esttina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
+
+int	check_validity(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+
+	if (str[i] == '\0')
+		return (1);
+	
+		while (str[i])
+		{
+			if (str[i] < '0' || str[i] > '9')
+				return (1);
+			i++;
+		}
+		return (0);
+}
+
+int	check_duplicates(t_node *stack, int n)
+{
+	while (stack)
+	{
+		if (stack->value == n)
+			return (1);
+		stack = stack->next;
+	}
+	return (0);
+}
 
 long	ft_atol(const char *str)
 {
