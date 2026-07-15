@@ -6,7 +6,7 @@
 /*   By: esttina <esttina@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/13 06:42:18 by esttina           #+#    #+#             */
-/*   Updated: 2026/07/16 01:09:05 by esttina          ###   ########.fr       */
+/*   Updated: 2026/07/16 01:22:35 by esttina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static int	parse_and_init(t_node **stack_a, int ac, char **av)
 		args = ft_split(av[1], ' ');
 	else
 		args = av + 1;
-	if (!args || !*args || init_stack(&stack_a, args) == 1)
+	if (!args || !*args || init_stack(stack_a, args) == 1)
 	{
 		if (ac == 2)
 			free_split(args);
@@ -81,10 +81,10 @@ static void	sort_stacks(t_node	**stack_a)
 		sa(stack_a);
 	else if (size == 3)
 		sort_3(stack_a);
-	else if (ft_lstsize(stack_a) <= 5)
-		sort_4_5(&stack_a, &stack_b);
+	else if (ft_lstsize(*stack_a) <= 5)
+		sort_4_5(stack_a, &stack_b);
 	else
-		radix_sort(&stack_a, &stack_b);
+		radix_sort(stack_a, &stack_b);
 	free_stack(&stack_b);
 }
 
