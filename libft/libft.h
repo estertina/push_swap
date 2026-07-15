@@ -6,7 +6,7 @@
 /*   By: esttina <esttina@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 21:27:49 by esttina           #+#    #+#             */
-/*   Updated: 2026/05/23 12:50:05 by esttina          ###   ########.fr       */
+/*   Updated: 2026/07/16 00:46:53 by esttina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,13 @@
 # include <stdbool.h>
 # include <fcntl.h>
 
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 42
-#endif
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 # ifndef MAX_FD
 #  define MAX_FD 1024
 # endif
-
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -62,6 +61,6 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	**ft_split(char const *s, char c);
-char    *get_next_line(int fd);
+char	*get_next_line(int fd);
 
 #endif

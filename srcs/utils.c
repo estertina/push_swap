@@ -6,7 +6,7 @@
 /*   By: esttina <esttina@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/13 06:42:15 by esttina           #+#    #+#             */
-/*   Updated: 2026/07/16 00:10:10 by esttina          ###   ########.fr       */
+/*   Updated: 2026/07/16 00:45:36 by esttina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,8 @@ int	check_validity(char *str)
 	i = 0;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
-
 	if (str[i] == '\0')
 		return (1);
-	
 	while (str[i])
 	{
 		if (str[i] < '0' || str[i] > '9')
@@ -69,10 +67,10 @@ long	ft_atol(const char *str)
 	return (res * sign);
 }
 
-void free_stack(t_node **stack)
+void	free_stack(t_node **stack)
 {
 	t_node	*tmp;
-	
+
 	if (!stack || !*stack)
 		return ;
 	while (*stack)
@@ -85,7 +83,7 @@ void free_stack(t_node **stack)
 
 int	is_sorted(t_node **stack)
 {
-	t_node *head;
+	t_node	*head;
 
 	if (!stack || !*stack)
 		return (1);
