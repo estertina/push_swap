@@ -6,7 +6,7 @@
 /*   By: esttina <esttina@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/13 06:42:18 by esttina           #+#    #+#             */
-/*   Updated: 2026/07/16 01:22:35 by esttina          ###   ########.fr       */
+/*   Updated: 2026/07/16 02:47:57 by esttina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ static void	sort_stacks(t_node	**stack_a)
 		sa(stack_a);
 	else if (size == 3)
 		sort_3(stack_a);
-	else if (ft_lstsize(*stack_a) <= 5)
+	else if (size <= 5)
 		sort_4_5(stack_a, &stack_b);
 	else
 		radix_sort(stack_a, &stack_b);
